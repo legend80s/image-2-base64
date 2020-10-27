@@ -2,7 +2,7 @@
 
 > Generate a complete base64 encoded string from an image through a URL or a path in Node.js.
 
-Prefix `data:${mimetype};base64,` to the result of [image-to-base64](https://www.npmjs.com/package/image-to-base64)to make a ready to go base64 encoded string.
+Prefix `data:${mimetype};base64,` to the result of [image-to-base64](https://www.npmjs.com/package/image-to-base64) to make a ready to go base64 encoded string.
 
 That's All!
 
