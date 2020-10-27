@@ -1,4 +1,4 @@
-# image-2-base64
+# image-to-base64
 
 > Generate a complete base64 encoded string from an image through a URL or a path in Node.js.
 
@@ -9,7 +9,7 @@ That's All!
 ## Usage
 
 ```javascript
-const { imageToBase64 } = require('image-2-base64');
+const { imageToBase64 } = require('@legend80s/image-to-base64');
 
 async function main() {
   // from view-source:https://open.weixin.qq.com/?lang=en
