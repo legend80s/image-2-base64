@@ -6,7 +6,7 @@ const { join } = require('path');
 const url = require('url');
 const fs = require('fs');
 
-const { getRequest } = require('./request');
+const { getRequest } = require('./utils/request');
 
 const { createWriteStream } = fs;
 
