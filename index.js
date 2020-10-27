@@ -1,4 +1,4 @@
-const imageToBase64 = require('image-to-base64')
+const imageToBase64Raw = require('image-to-base64')
 
 const { extname } = require('path');
 const { tmpdir } = require('os');
@@ -15,14 +15,12 @@ const { createWriteStream } = fs;
  */
 const isRemoteFile = (path) => /^https?:\/\//.test(path);
 
-exports.isRemoteFile = isRemoteFile;
-
 /**
  * Get file size in Byte from url or local path.
  * @param {string} endpoint
  * @returns {Promise<number>}
  */
-exports.getFileSize = (endpoint) => {
+const getFileSize = (endpoint) => {
   return new Promise((resolve, reject) => {
     const isRemoteImage = isRemoteFile(endpoint);
 
@@ -67,15 +65,16 @@ exports.getFileSize = (endpoint) => {
 }
 
 /**
- *
+ * Convert image to base64.
  * @param {string} url url or local image patch
+ * @returns {Promise<string>}
  */
-exports.imageToBase64 = async url => {
+const imageToBase64 = async url => {
   // console.log('url:', url);
 
   const [ext, base64Str] = await Promise.all([
     resolveExt(url),
-    imageToBase64(url).catch(error => {
+    imageToBase64Raw(url).catch(error => {
       console.error('[imageToBase64] url failed', error);
 
       return '';
@@ -137,8 +136,6 @@ const resolveExtFromRemote = url => {
   })
 }
 
-exports.resolveExtFromRemote = resolveExtFromRemote;
-
 /**
  * @param {string} url url or local image patch
  */
@@ -155,3 +152,9 @@ async function resolveExt(url) {
 
   return '';
 }
+
+exports.imageToBase64 = imageToBase64;
+exports.getFileSize = getFileSize;
+
+exports.resolveExtFromRemote = resolveExtFromRemote;
+exports.isRemoteFile = isRemoteFile;
