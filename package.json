@@ -1,0 +1,31 @@
+{
+  "name": "image-2-base64",
+  "version": "0.0.0",
+  "description": "> Generate a complete base64 encoded string from an image through a URL or a path in Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legend80s/image-2-base64.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legend80s/image-2-base64/issues"
+  },
+  "homepage": "https://github.com/legend80s/image-2-base64",
+  "tnpm": {
+    "mode": "yarn"
+  },
+  "dependencies": {
+    "image-to-base64": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "git-commit-msg-linter": "^3.0.0",
+    "jest": "^26.6.1"
+  }
+}
