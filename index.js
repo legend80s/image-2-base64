@@ -75,7 +75,7 @@ const imageToBase64 = async url => {
   const [ext, base64Str] = await Promise.all([
     resolveExt(url),
     imageToBase64Raw(url).catch(error => {
-      console.error('[imageToBase64] url failed', error);
+      console.error('[imageToBase64] url failed:', error);
 
       return '';
     }),
